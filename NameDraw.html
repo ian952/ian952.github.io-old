@@ -27,7 +27,7 @@ function draw() {
 	if (pos === -1) {
 		text = "Invalid Name!";	
 	} else {
-		text = list[(pos+10)%list.length];
+		text = list[pos] + ", you are getting a gift for " + list[(pos+10)%list.length] + "!";
 	}
     
     document.getElementById("demo").innerHTML = text;
