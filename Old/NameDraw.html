@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Name Draw</title>
+</head>
+<body>
+	<h1>Enter your name </h1>
+    <input id = "name" type = "string">
+    <button type="button" onclick="draw()">Submit</button>
+    
+    <p id="demo"></p>
+    
+    <script>
+function draw() {
+    var x, text,pos;
+	var list = ["Ian", "Sarina", "Jeff", "Mindy", "Lucy", "Zili"];
+
+	pos = -1;
+    x = document.getElementById("name").value;
+	for (i = 0; i < list.length; i++) {
+		if (list[i].toLowerCase() === x.toLowerCase()) {
+			pos = i;
+		}
+	}
+	
+	if (pos === -1) {
+		text = "Invalid Name!";	
+	} else {
+		text = list[pos] + ", you are getting a gift for " + list[(pos+10)%list.length] + "!";
+	}
+    
+    document.getElementById("demo").innerHTML = text;
+}
+</script>
+
+</body>
+</html>
